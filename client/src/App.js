@@ -7,7 +7,7 @@ function App() {
   const [url,setURL] = useState("");
   useEffect(() => {
     let axios = Axios.create({
-      baseURL: 'http://localhost:5000/api'
+      baseURL: 'http://localhost:8080/api'
     })
     axios.post("/todo", { text: "Aditya", isDone: true }).then(resp => {
       console.log(resp.data);
