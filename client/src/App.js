@@ -2,12 +2,13 @@ import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Axios from "axios";
+import baseURL from "./baseurl.js";
 
 function App() {
   const [url,setURL] = useState("");
   useEffect(() => {
     let axios = Axios.create({
-      baseURL: 'http://localhost:8080/api'
+      baseURL: baseURL
     })
     axios.post("/todo", { text: "Aditya", isDone: true }).then(resp => {
       console.log(resp.data);
