@@ -6,7 +6,9 @@ const path = require("path");
 const { DB_CONN } = process.env;
 
 const api = express();
-api.use(cors()); // enable CORS on all our requests
+api.use(cors({
+    origin: '*'
+})); // enable CORS on all our requests
 api.use(express.json()); // parses incoming requests with JSON payloads
 api.use(express.urlencoded({ extended: false })); // parses incoming requests with urlencoded payloads
 
@@ -53,6 +55,6 @@ api.get("/*", (req, res) => {
 });
 
 const port = process.env.PORT || 8080;
-api.listen(port,()=>{
+api.listen(port, () => {
     console.log('Server up !', port)
 });
