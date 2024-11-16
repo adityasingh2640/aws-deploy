@@ -7,6 +7,7 @@ import baseURL from "./baseurl.js";
 function App() {
   const [url,setURL] = useState("");
   useEffect(() => {
+    console.log("baseURL ",baseURL);
     let axios = Axios.create({
       baseURL: baseURL
     })
@@ -14,7 +15,7 @@ function App() {
       console.log(resp.data);
       if(resp?.data?.text) setURL(resp.data.text)
     })
-  })
+  },[])
 
   return (
     <div className="App">
