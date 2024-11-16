@@ -34,7 +34,7 @@ const host = process.env.DB_HOSTNAME;
 api.post("/api/todo", (req, res) => {
     console.log(req.body)
     let todo = req.body;
-    todo.text = todo.text + " Singh"
+    todo.text = todo.text + " Singh " + Math.random();
     todo.date = Date.now();
     res.status(200).send(todo);
 
