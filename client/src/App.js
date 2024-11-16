@@ -10,7 +10,7 @@ function App() {
     let axios = Axios.create({
       baseURL: baseURL
     })
-    axios.post("/todo", { text: "Aditya", isDone: true }).then(resp => {
+    axios.post("/api/todo", { text: "Aditya", isDone: true }).then(resp => {
       console.log(resp.data);
       if(resp?.data?.text) setURL(resp.data.text)
     })
