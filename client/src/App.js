@@ -7,10 +7,7 @@ import baseURL from "./baseurl.js";
 function App() {
   const [url,setURL] = useState("");
   useEffect(() => {
-    console.log("baseURL ",baseURL);
-    let axios = Axios.create({
-      baseURL: baseURL
-    })
+    let axios = Axios.create()
     axios.post("/api/todo", { text: "Aditya", isDone: true }).then(resp => {
       console.log(resp.data);
       if(resp?.data?.text) setURL(resp.data.text)
